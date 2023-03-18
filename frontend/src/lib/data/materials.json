@@ -1,0 +1,142 @@
+[
+  {
+    "id": 1,
+    "name": "Prithiva Topaz Sliver",
+    "image": "https://static.wikia.nocookie.net/gensin-impact/images/3/33/Item_Prithiva_Topaz_Sliver.png"
+  },
+  {
+    "id": 2,
+    "name": "Prithiva Topaz Fragment",
+    "image": "https://static.wikia.nocookie.net/gensin-impact/images/3/3e/Item_Prithiva_Topaz_Fragment.png"
+  },
+  {
+    "id": 3,
+    "name": "Prithiva Topaz Chunk",
+    "image": "https://static.wikia.nocookie.net/gensin-impact/images/4/4b/Item_Prithiva_Topaz_Chunk.png"
+  },
+  {
+    "id": 4,
+    "name": "Prithiva Topaz Gemstone",
+    "image": "https://static.wikia.nocookie.net/gensin-impact/images/e/eb/Item_Prithiva_Topaz_Gemstone.png"
+  },
+  {
+    "id": 5,
+    "name": "Nagadus Emerald Sliver",
+    "image": "https://static.wikia.nocookie.net/gensin-impact/images/2/26/Item_Nagadus_Emerald_Sliver.png"
+  },
+  {
+    "id": 6,
+    "name": "Nagadus Emerald Fragment",
+    "image": "https://static.wikia.nocookie.net/gensin-impact/images/2/2d/Item_Nagadus_Emerald_Fragment.png"
+  },
+  {
+    "id": 7,
+    "name": "Nagadus Emerald Chunk",
+    "image": "https://static.wikia.nocookie.net/gensin-impact/images/a/a9/Item_Nagadus_Emerald_Chunk.png"
+  },
+  {
+    "id": 8,
+    "name": "Nagadus Emerald Gemstone",
+    "image": "https://static.wikia.nocookie.net/gensin-impact/images/c/c0/Item_Nagadus_Emerald_Gemstone.png"
+  },
+  {
+    "id": 9,
+    "name": "Shivada Jade Sliver",
+    "image": "https://static.wikia.nocookie.net/gensin-impact/images/8/87/Item_Shivada_Jade_Sliver.png"
+  },
+  {
+    "id": 10,
+    "name": "Shivada Jade Fragment",
+    "image": "https://static.wikia.nocookie.net/gensin-impact/images/9/9a/Item_Shivada_Jade_Fragment.png"
+  },
+  {
+    "id": 11,
+    "name": "Shivada Jade Chunk",
+    "image": "https://static.wikia.nocookie.net/gensin-impact/images/4/41/Item_Shivada_Jade_Chunk.png"
+  },
+  {
+    "id": 12,
+    "name": "Shivada Jade Gemstone",
+    "image": "https://static.wikia.nocookie.net/gensin-impact/images/e/e9/Item_Shivada_Jade_Gemstone.png"
+  },
+  {
+    "id": 13,
+    "name": "Agnidus Agate Sliver",
+    "image": "https://static.wikia.nocookie.net/gensin-impact/images/5/51/Item_Agnidus_Agate_Sliver.png"
+  },
+  {
+    "id": 14,
+    "name": "Agnidus Agate Fragment",
+    "image": "https://static.wikia.nocookie.net/gensin-impact/images/e/ec/Item_Agnidus_Agate_Fragment.png"
+  },
+  {
+    "id": 15,
+    "name": "Agnidus Agate Chunk",
+    "image": "https://static.wikia.nocookie.net/gensin-impact/images/0/00/Item_Agnidus_Agate_Chunk.png"
+  },
+  {
+    "id": 16,
+    "name": "Agnidus Agate Gemstone",
+    "image": "https://static.wikia.nocookie.net/gensin-impact/images/0/0d/Item_Agnidus_Agate_Gemstone.png"
+  },
+  {
+    "id": 17,
+    "name": "Varunada Lazurite Sliver",
+    "image": "https://static.wikia.nocookie.net/gensin-impact/images/f/f8/Item_Varunada_Lazurite_Sliver.png"
+  },
+  {
+    "id": 18,
+    "name": "Varunada Lazurite Fragment",
+    "image": "https://static.wikia.nocookie.net/gensin-impact/images/f/f6/Item_Varunada_Lazurite_Fragment.png"
+  },
+  {
+    "id": 19,
+    "name": "Varunada Lazurite Chunk",
+    "image": "https://static.wikia.nocookie.net/gensin-impact/images/f/f4/Item_Varunada_Lazurite_Chunk.png"
+  },
+  {
+    "id": 20,
+    "name": "Varunada Lazurite Gemstone",
+    "image": "https://static.wikia.nocookie.net/gensin-impact/images/a/a4/Item_Varunada_Lazurite_Gemstone.png"
+  },
+  {
+    "id": 21,
+    "name": "Vajrada Amethyst Sliver",
+    "image": "https://static.wikia.nocookie.net/gensin-impact/images/3/39/Item_Vajrada_Amethyst_Sliver.png"
+  },
+  {
+    "id": 22,
+    "name": "Vajrada Amethyst Fragment",
+    "image": "https://static.wikia.nocookie.net/gensin-impact/images/c/cb/Item_Vajrada_Amethyst_Fragment.png"
+  },
+  {
+    "id": 23,
+    "name": "Vajrada Amethyst Chunk",
+    "image": "https://static.wikia.nocookie.net/gensin-impact/images/c/c1/Item_Vajrada_Amethyst_Chunk.png"
+  },
+  {
+    "id": 24,
+    "name": "Vajrada Amethyst Gemstone",
+    "image": "https://static.wikia.nocookie.net/gensin-impact/images/b/be/Item_Vajrada_Amethyst_Gemstone.png"
+  },
+  {
+    "id": 25,
+    "name": "Vayuda Turquoise Sliver",
+    "image": "https://static.wikia.nocookie.net/gensin-impact/images/9/93/Item_Vayuda_Turquoise_Sliver.png"
+  },
+  {
+    "id": 26,
+    "name": "Vayuda Turquoise Fragment",
+    "image": "https://static.wikia.nocookie.net/gensin-impact/images/7/71/Item_Vayuda_Turquoise_Fragment.png"
+  },
+  {
+    "id": 27,
+    "name": "Vayuda Turquoise Chunk",
+    "image": "https://static.wikia.nocookie.net/gensin-impact/images/3/33/Item_Vayuda_Turquoise_Chunk.png"
+  },
+  {
+    "id": 28,
+    "name": "Vayuda Turquoise Gemstone",
+    "image": "https://static.wikia.nocookie.net/gensin-impact/images/3/32/Item_Vayuda_Turquoise_Gemstone.png"
+  }
+]

@@ -1,0 +1,33 @@
+[
+  {
+    "id": 1,
+    "name": "Yelan",
+    "image": "characters/yelan.webp",
+    "materials": [{
+      "id": 1,
+      "needed": 10
+    }, {
+      "id": 2,
+      "needed": 50
+    }, {
+      "id": 3,
+      "needed": 2
+    }]
+  },
+  {
+    "id": 2,
+    "name": "Ayaka",
+    "image": "characters/ayaka.webp",
+    "materials": [{
+      "id": 1,
+      "needed": 2
+    }, {
+      "id": 2,
+      "needed": 50
+    }, {
+      "id": 3,
+      "needed": 2
+    }]
+  }
+
+]

@@ -1,0 +1,19 @@
+{
+  "id": 1,
+  "name": "Irisu",
+  "favorites": [1],
+  "inventory": [
+    {
+      "id": 1,
+      "collected": 2
+    },
+    {
+      "id": 2,
+      "collected": 40
+    },
+    {
+      "id": 3,
+      "collected": 2
+    }
+  ]
+}
