@@ -8,3 +8,16 @@ node_modules
 !.env.example
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
+/.idea/sonarlint/issuestore/1/2/12453d06e6e35287172e482940b954ba12dc25a2
+/.idea/codeStyles/codeStyleConfig.xml
+/static/favicon.png
+/.idea/frontend.iml
+/.idea/git_toolbox_prj.xml
+/.idea/sonarlint/issuestore/index.pb
+/.idea/sonarlint/securityhotspotstore/index.pb
+/.idea/modules.xml
+/.idea/php.xml
+/.idea/codeStyles/Project.xml
+/.idea/inspectionProfiles/Project_Default.xml
+/.idea/vcs.xml
+/.idea/watcherTasks.xml
