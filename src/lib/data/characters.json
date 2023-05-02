@@ -3,6 +3,7 @@
     "id": 1,
     "name": "Yelan",
     "image": "characters/yelan.webp",
+    "elements": ["anemo"],
     "materials": [{
       "id": 1,
       "needed": 10
@@ -18,6 +19,7 @@
     "id": 2,
     "name": "Ayaka",
     "image": "characters/ayaka.webp",
+    "elements": ["pyro"],
     "materials": [{
       "id": 1,
       "needed": 2

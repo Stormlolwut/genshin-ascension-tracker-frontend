@@ -21,3 +21,4 @@ vite.config.ts.timestamp-*
 /.idea/inspectionProfiles/Project_Default.xml
 /.idea/vcs.xml
 /.idea/watcherTasks.xml
+/frontend/
