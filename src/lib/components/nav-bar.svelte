@@ -10,14 +10,14 @@
     let modalTitle = "Login"
     let modalButtonText = "Send"
 
+    //TODO: create a global login/logout state so that we can update the application accordingly
     let isLoggedIn = false
 
     onMount(() => {
-        isLoggedIn = getLoginStatus()
+        getLoginStatus()
     })
 
     const setModalToLogin = () => {
-        console.log(authModal)
         modalType = "login"
         modalTitle = "Login"
         modalButtonText = "Send"
@@ -36,11 +36,17 @@
     }
 
     const getLoginStatus = () => {
-        return Jwt.IsSet()
+        isLoggedIn = Jwt.IsSet()
+        return isLoggedIn
+    }
+
+    const logout = () => {
+        Jwt.RemoveToken()
+        isLoggedIn = false
     }
 
 </script>
-<AuthModal bind:this="{authModal}" title="{modalTitle}" submitText="{modalButtonText}" type="{modalType}"/>
+<AuthModal on:authorized={getLoginStatus} bind:this="{authModal}" title="{modalTitle}" submitText="{modalButtonText}" type="{modalType}"/>
 <nav class="navbar navbar-expand-lg bg-body-tertiary mb-4">
     <div class="container-fluid">
         <span class="navbar-brand">Genshin Ascension Tracker (GAT)</span>
@@ -80,7 +86,7 @@
                 {/if}
                 {#if isLoggedIn}
                     <li>
-                        <button on:click={Jwt.RemoveToken} type="button" class="btn">
+                        <button on:click={logout} type="button" class="btn btn-danger">
                             Logout
                         </button>
                     </li>

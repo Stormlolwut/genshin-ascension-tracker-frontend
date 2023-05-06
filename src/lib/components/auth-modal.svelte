@@ -2,7 +2,7 @@
 <script lang="ts">
 
     import {auth} from '../../endpoints/auth'
-    import {onDestroy} from "svelte";
+    import {createEventDispatcher, onDestroy} from "svelte";
     import AlertToast from "./alert-toast.svelte";
     import {FormValidator} from "$lib/utils/form/form-validator";
     import {IsEmptyRule} from "$lib/utils/form/rules/is-empty-rule";
@@ -20,6 +20,8 @@
     let password: string
 
     let isValid = false
+
+    const dispatcher = createEventDispatcher()
 
     onDestroy(() => {
         if (modalInstance) {
@@ -66,6 +68,8 @@
         const isOk = await toast.handleAsync(result, true, false)
 
         if (isOk) {
+            dispatcher('authorized', true)
+
             modalInstance.hide()
             clearFields()
         }
