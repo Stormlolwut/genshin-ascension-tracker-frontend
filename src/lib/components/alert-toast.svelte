@@ -1,13 +1,34 @@
+<svelte:options accessors />
 <script lang="ts">
     let toast: HTMLElement
 
-    let title: string = ""
-    let body: string = ""
+    let title = ""
+    let body = ""
 
-    let status: number = 200;
+    let status = 200;
     let type: "ok" | "error" = "ok"
 
-    export const errorFn = (t: string, b: string, s: number = 500) => {
+
+    /**
+     * Handles a promise and shows a toast if the promise fails or succeeds
+     * @param promise The promise to handle
+     * @param showSuccess Whether to show a toast on success
+     * @param fallback? The fallback value it returns if the promise fails
+     */
+    export const handleAsync = async <T>(promise: unknown, showSuccess = false, fallback?: any): Promise<T> => {
+        try {
+            const response = await promise;
+            if (showSuccess) showOk("Success", response.message, response.status);
+
+            return response?.body || response
+        } catch (e) {
+            const body = JSON.parse(e.message)
+            showError("Error", body.message, body.status);
+            return fallback;
+        }
+    }
+
+    export const showError = (t: string, b: string, s = 500) => {
         title = t
         body = b
         status = s
@@ -16,7 +37,7 @@
         bootstrap.Toast.getOrCreateInstance(toast).show();
     }
 
-    export const okFn = (t: string, b: string, s: number = 200) => {
+    export const showOk = (t: string, b: string, s = 200) => {
         title = t
         body = b
         status = s

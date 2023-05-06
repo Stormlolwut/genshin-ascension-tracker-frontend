@@ -5,12 +5,14 @@ import {Jwt} from "./jwt"
 export abstract class WebBase implements Get, Post {
     protected endpoint = import.meta.env.VITE_WORKER_ENDPOINT
 
-    auth(callback: Function): Function {
-        return async (...args: any[]) => {
-            if (!Jwt.IsSet()) throw {
-                body: [],
-                status: 401,
-                message: "Not logged in!"
+    auth<T extends any[]>(callback: (...args: T) => any): (...args: T) => any {
+        return async (...args: T) => {
+            if (!Jwt.IsSet()) {
+                throw new Error(JSON.stringify( {
+                    body: [],
+                    status: 401,
+                    message: "Not logged in!"
+                }))
             }
 
             return callback(...args)
