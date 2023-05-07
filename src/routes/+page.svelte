@@ -8,6 +8,7 @@
     import NavBar from "$lib/components/nav-bar.svelte"
     import SearchBar from "$lib/components/search-bar.svelte"
     import AlertToast from "$lib/components/alert-toast.svelte"
+    import CharacterCard from "$lib/components/character-card.svelte"
 
     import charactersJson from "$lib/data/characters.json"
     import userJson from "$lib/data/user.json"
@@ -17,7 +18,6 @@
 
     import {inventory} from "../endpoints/inventory";
     import {favorites} from "../endpoints/favorites";
-    import {auth} from "../endpoints/auth"
 
     const characters: Array<Character> = charactersJson
     const materials: Array<Material> = materialsJson
@@ -72,7 +72,6 @@
                     <SearchBar items="{characters}" key="name" on:filtered={filterCharacters}></SearchBar>
                 </div>
             </div>
-            <p class="card-subtitle mb-2 text-muted">So many to choose from!</p>
             <div class="dropdown">
                 <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
                         aria-expanded="false">
@@ -90,33 +89,7 @@
         <div class="card-body">
             {#each filteredCharacters as character}
                 {#if isFavorite(character)}
-                    <div class="card" style="width: 250px">
-                        <div class="card-header container">
-
-                            <div class="row">
-                                <div class="col">
-                                    <img class="img-thumbnail rounded"
-                                         src="{'./images/'+character.image}"
-                                         alt="{character.name}_icon"
-                                         style="width: 125px"
-                                    />
-                                </div>
-                                <div class="col">
-                                    <p><strong>Progress</strong></p>
-                                    <p>
-                                        <span>1</span>
-                                        <span>-></span>
-                                        <span>90</span>
-                                    </p>
-
-                                </div>
-
-                            </div>
-                            <p class="card-title">{character.name}</p>
-
-
-                        </div>
-                    </div>
+                    <CharacterCard bind:character={character} />
                     <div style="width: 125px; display: inline-block" class="me-2">
                         <p>{character.name}</p>
                         <button
