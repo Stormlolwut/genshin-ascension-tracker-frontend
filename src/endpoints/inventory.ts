@@ -3,14 +3,17 @@ import type {InvResponse} from "./responses/inv-response";
 import type {InventoryItem} from "../models/inventory-item";
 
 class Inventory extends WebBase {
-    public retrieve = this.auth( async (): Promise<Array<InventoryItem>> => {
-        const response = await this.get<null, InvResponse>('inventory')
-        return response.body
+    public retrieve = this.auth( async (): Promise<InvResponse> => {
+        return this.get<null, InvResponse>('inventory')
     })
 
-    public update = this.auth(async (inventory: Array<InventoryItem>): Promise<Array<InventoryItem>> => {
-        const response =  await this.post<Array<InventoryItem>, InvResponse>('inventory', inventory)
-        return response.body
+    // This is a special case where we want to return the body of the response
+    public retrieveBody = this.auth( async (): Promise<Array<InventoryItem>> => {
+        return (await this.retrieve()).body
+    })
+
+    public update = this.auth(async (inventory: Array<InventoryItem>): Promise<InvResponse> => {
+        return this.post<Array<InventoryItem>, InvResponse>('inventory', inventory)
     })
 }
 

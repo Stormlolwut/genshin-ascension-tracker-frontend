@@ -2,12 +2,13 @@
 <script lang="ts">
 
     import {auth} from '../../endpoints/auth'
-    import {createEventDispatcher, onDestroy} from "svelte";
+    import {createEventDispatcher, onDestroy, onMount} from "svelte";
     import AlertToast from "./alert-toast.svelte";
     import {FormValidator} from "$lib/utils/form/form-validator";
     import {IsEmptyRule} from "$lib/utils/form/rules/is-empty-rule";
     import {IsLongEnoughRule} from "$lib/utils/form/rules/is-long-enough-rule";
     import {Field} from "$lib/utils/form/field.js";
+    import {handleAsync} from "$lib/utils/toast-service";
 
     export let title;
     export let submitText
@@ -23,16 +24,24 @@
 
     const dispatcher = createEventDispatcher()
 
+    let Modal;
+
+    onMount(async () => {
+        Modal = (await import('bootstrap')).Modal
+    })
+
     onDestroy(() => {
         if (modalInstance) {
             modalInstance.dispose()
         }
     });
 
+
+
     export let showModal = () => {
         const modalElement = document.getElementById('authModal')
         if (!modalInstance) {
-            modalInstance = new bootstrap.Modal(modalElement)
+            modalInstance = new Modal(modalElement)
         }
         modalInstance.show();
     }
@@ -65,7 +74,7 @@
             ? auth.Login(username, password)
             : auth.Register(username, password)
 
-        const isOk = await toast.handleAsync(result, true, false)
+        const isOk = await handleAsync(result, true, false)
 
         if (isOk) {
             dispatcher('authorized', true)

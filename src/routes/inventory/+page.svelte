@@ -18,7 +18,7 @@
 
   // TODO: use +page.server.ts to retrieve
   onMount(async () =>{
-    user.inventory = await inventory.retrieve();
+    user.inventory = await inventory.retrieveBody();
     filteredMaterials = filteredMaterials
   })
 
