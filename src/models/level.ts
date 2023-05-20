@@ -1,11 +1,11 @@
 export interface LevelData {
-    type: 'attack' | 'burst' | 'skill' | 'talent'
+    type: 'Attack' | 'Burst' | 'Skill' | 'Talent'
     current: number
     preferred: number
 }
 
 export class Level {
-    public type: 'attack' | 'burst' | 'skill' | 'talent'
+    public type: 'Attack' | 'Burst' | 'Skill' | 'Talent'
     public current: number
     public preferred: number
 

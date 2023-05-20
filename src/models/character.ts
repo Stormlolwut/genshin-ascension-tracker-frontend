@@ -5,5 +5,6 @@ export interface Character {
    name: string;
    image: string;
    elements: Array<string>;
+
    materials: Array<AscensionMaterial>;
 }

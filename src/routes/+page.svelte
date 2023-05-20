@@ -47,13 +47,16 @@
 
     const addToFavorites = async (character) => {
 
+        const stats = new Array<Level>()
+        stats.push(new Level({current: 0, preferred: 6, type: "Attack"}))
+        stats.push(new Level({current: 0, preferred: 6, type: "Burst"}))
+        stats.push(new Level({current: 0, preferred: 6, type: "Skill"}))
+
         const emptyCharacterSheet: CharacterStatsData = {
             id: character.id,
             name: character.name,
-            attack: new Level({current: 0, preferred: 6, type: "attack"}),
-            talent: new Level({current: 0, preferred: 6, type: "talent"}),
-            burst: new Level({current: 0, preferred: 6, type: "burst"}),
-            skill: new Level({current: 0, preferred: 6, type: "skill"})
+            stats: stats,
+            talent: new Level({current: 0, preferred: 90, type: "Talent"})
         }
 
         user.favorites.push(new CharacterStats(emptyCharacterSheet))
@@ -62,8 +65,10 @@
         filteredCharacters = filteredCharacters
     }
 
-    const removeFromFavorites = async (character) => {
-        user.favorites = user.favorites.filter((id) => id !== character.id)
+    const removeFromFavorites = async (event: CustomEvent) => {
+        const removedCharacter = event.detail.character
+        user.favorites = user.favorites.filter((character) => character.id !== removedCharacter.id)
+
         await handleAsync(favorites.update(user.favorites), [], true)
 
         filteredCharacters = filteredCharacters
@@ -73,11 +78,10 @@
         const result = user.favorites.find((stats) => stats.id === character.id)
         return result !== undefined
     }
-    const getMaterialImage = (material) => {
-        return materials.find((mat) => mat.id === material.id)?.image;
-    }
-    const getCollectedMaterial = (material) => {
-        return user.inventory.find((invMaterial) => invMaterial.id === material.id)?.collected ?? 0;
+    // We can't directly couple the object because since svelte wants to write to it aswell
+    const getCharacterIndexForStats = (character) => {
+        console.log(user.favorites)
+        return  user.favorites.findIndex((stats) => stats.id === character.id);
     }
     const filterCharacters = (event: CustomEvent) => {
         filteredCharacters = event.detail.items;
@@ -111,7 +115,11 @@
         <div class="card-body d-flex flex-wrap justify-content-start">
             {#each filteredCharacters as character (character.id)}
                 {#if isFavorite(character)}
-                    <CharacterCard bind:character={character}/>
+                    <CharacterCard
+                            on:remove={removeFromFavorites}
+                            bind:characterStats={user.favorites[getCharacterIndexForStats(character)]}
+                            bind:character={character}
+                    />
                 {/if}
             {/each}
         </div>

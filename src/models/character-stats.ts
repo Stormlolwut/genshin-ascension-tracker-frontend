@@ -1,28 +1,21 @@
-import {Level} from "./level";
+import type {Level} from "./level";
 
 export interface CharacterStatsData {
     id: number
-
+    stats: Array<Level>
     talent: Level
-    attack: Level
-    burst: Level
-    skill: Level
 }
 
 //TODO: add items
 export class CharacterStats {
     public id: number
+    public stats: Array<Level>
     public talent: Level
-    public attack: Level
-    public burst: Level
-    public skill: Level
 
     constructor(data: CharacterStatsData) {
         this.id = data.id
-        this.talent = new Level(data.talent)
-        this.attack = new Level(data.attack)
-        this.burst = new Level(data.burst)
-        this.skill = new Level(data.skill)
+        this.stats = data.stats
+        this.talent = data.talent
     }
 }
 

@@ -36,8 +36,6 @@
         }
     });
 
-
-
     export let showModal = () => {
         const modalElement = document.getElementById('authModal')
         if (!modalInstance) {
